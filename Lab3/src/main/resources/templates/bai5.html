@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bai5 - Lab3</title>
+</head>
+<body>
+	<h3>Fill to SelectBox</h3> 
+	<select name="cbo"> 
+		<th:block th:each="UserZowick: ${list}"> 
+			<option th:value="${UserZowick.id}" th:text="${UserZowick.fullname}"></option> 
+		</th:block> 
+	</select> 
+ 	
+	<h3>Create Radio Button Group</h3> 
+	<th:block th:each="UserZowick: ${list}"> 
+		<label> 
+			<input type="radio" name="rdo" th:value="${UserZowick.id}"> 
+			<th:block th:text="${UserZowick.fullname}"></th:block> 
+		</label> 
+		<br> 
+	</th:block> 	
+</body>
+</html>

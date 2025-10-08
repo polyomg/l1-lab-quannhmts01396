@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký tài khoản</title>
+</head>
+<body>
+    <h2>Form Đăng Ký</h2>
+	 <p th:text="${message}"></p>
+
+    <div th:if="${photo}">
+        <img th:src="@{'/uploads/' + ${photo}}" style="width:150px; border-radius:10px;">
+    </div>
+    <hr>
+    <form action="/bai3/register" method="post" enctype="multipart/form-data">
+        <label>Tên đăng nhập:</label>
+        <input name="username" type="text"><br><br>
+
+        <label>Mật khẩu:</label>
+        <input name="password" type="password"><br><br>
+
+        <label>Email:</label>
+        <input name="email" type="email"><br><br>
+
+        <label>Ảnh đại diện:</label>
+        <input name="photo" type="file"><br><br>
+
+        <button type="submit">Đăng ký</button>
+    </form>
+
+    <hr>
+   
+    <div>
+        <a href="http://localhost:8080/test">Kiểm tra</a>
+
+	    <form action="/logout" method="post" style="display:inline">
+	    	<button type="submit">Logout</button>
+	    </form>
+    </div>
+</body>
+</html>
