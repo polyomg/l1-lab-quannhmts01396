@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+</head>
+<body>
+    <h2>Form Đăng Nhập</h2>
+    <div th:text="${message}"></div>
+   
+    <hr>
+    <form action="/bai2/login" method="post">
+        <label>Tên đăng nhập (ZOWICK):</label>
+        <input name="username" type="text" placeholder="Nhập tên đăng nhập"><br><br>
+
+        <label>Mật khẩu (123):</label>
+        <input name="password" type="password" placeholder="Nhập mật khẩu"><br><br>
+
+        <label>
+            <input type="checkbox" name="remember" value="true"> Ghi nhớ đăng nhập
+        </label><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+    <hr>
+    <div>
+        <a href="http://localhost:8080/test">Kiểm tra</a>
+
+	    <form action="/logout" method="post" style="display:inline">
+	    	<button type="submit">Logout</button>
+	    </form>
+    </div>
+     
+</body>
+</html>
